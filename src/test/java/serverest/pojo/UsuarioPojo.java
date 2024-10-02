@@ -4,9 +4,19 @@ public class UsuarioPojo {
     private String nome;
     private String email;
     private String password;
-    private boolean administrador;
+    private String administrador;
 
-    
+
+    public UsuarioPojo(String nome, String email, String password, String administrador) {
+        if (nome == null || email == null || password == null || administrador == null) {
+            throw new IllegalArgumentException("Nenhum argumento pode ser nulo");
+        }
+        this.nome = nome;
+        this.email = email;
+        this.password = password;
+        this.administrador = administrador;
+    }
+
     public String getNome() {
         return nome;
     }
@@ -25,12 +35,12 @@ public class UsuarioPojo {
     public void setPassword(String password) {
         this.password = password;
     }
-    public boolean isAdministrador() {
+    
+    public String getAdministrador() {
         return administrador;
     }
-    public void setAdministrador(boolean administrador) {
+
+    public void setAdministrador(String administrador) {
         this.administrador = administrador;
     }
-
-
 }

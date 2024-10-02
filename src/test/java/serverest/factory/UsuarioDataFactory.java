@@ -1,29 +1,17 @@
 package serverest.factory;
 
+import java.util.UUID;
+
 import serverest.pojo.UsuarioPojo;
 
 public class UsuarioDataFactory {
 
     public static UsuarioPojo criarUsuarioAdm(){
-        UsuarioPojo usuarioAdministrador = new UsuarioPojo();
-
-        usuarioAdministrador.setNome("Admin");
-        usuarioAdministrador.setEmail("admin@admin.com");
-        usuarioAdministrador.setPassword("admin");
-        usuarioAdministrador.setAdministrador(true);
-
-        return usuarioAdministrador;
+        return new UsuarioPojo("admin", "admin@admin.com.br", "admin", "true");
     }
 
     public static UsuarioPojo criarUsuarioComum(){
-        UsuarioPojo usuarioComum = new UsuarioPojo();
-
-        usuarioComum.setNome("user1");
-        usuarioComum.setEmail("user1@user1.com");
-        usuarioComum.setPassword("user1");
-        usuarioComum.setAdministrador(false);
-
-        return usuarioComum;
+        return new UsuarioPojo("user1", "user1@user1.com.br", "user1", "false");
     }
 
 
